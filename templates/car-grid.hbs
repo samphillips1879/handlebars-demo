@@ -1,0 +1,21 @@
+{{!-- any comments that must contain "}}" or other handlebars tokens should use the "--" --}}
+{{! comments that don't use handlebars tokens }}
+
+
+
+
+{{#each cars}}  {{!  }}
+	<section id="card--{{@index}}" class="card-wrapper" style="border: 2px solid {{color}}">
+		<h3>Car #{{@index}}</h3>
+		<h4>{{year}} {{make}} {{model}}</h4>
+		<div class="car-price">${{price}}</div>
+		<div class="card-img" style="background-image: url('images/{{image}}')"></div>
+
+		{{#if purchased}}
+			<span class="card-sold">SOLD!</span>
+		{{/if}}
+
+		<p class="card-copy">{{description}}</p>
+	</section>
+
+{{/each}}
